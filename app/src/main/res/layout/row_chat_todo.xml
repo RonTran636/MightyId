@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:layout_marginTop="@dimen/chat_room_divider"
+        android:background="@color/primary_background"
+        android:layout_marginBottom="@dimen/chat_room_divider">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Task are about to be finished"
+            android:textSize="@dimen/text_medium_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/todo_status_icon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:scaleType="center"
+            app:tint="@color/white"
+            android:background="@color/green"
+            android:layout_marginEnd="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/todo_title"
+            app:layout_constraintEnd_toStartOf="@+id/todo_status_text"
+            app:layout_constraintTop_toTopOf="@+id/todo_title"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent"
+            app:strokeColor="@color/accent_white" />
+
+        <TextView
+            android:id="@+id/todo_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_light"
+            android:text="Complete"
+            app:layout_constraintBottom_toBottomOf="@+id/todo_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/todo_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/rubik_bold"
+            android:textStyle="italic"
+            android:text="This is todo title"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todo_status" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="@dimen/text_small_size"
+            android:text="@string/attach_file"
+            android:textColor="@color/bottom_nav_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todo_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_attach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="top|start"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/materialTextView14"
+            app:layout_constraintTop_toTopOf="@+id/materialTextView14" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/rubik_regular"
+            android:text="@string/assignee"
+            android:textColor="@color/bottom_nav_default"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todo_attach" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_assignee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="top|start"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/materialTextView16"
+            app:layout_constraintTop_toTopOf="@+id/materialTextView16" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/rubik_regular"
+            android:text="@string/deadline"
+            android:textColor="@color/bottom_nav_default"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todo_assignee" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_deadline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:gravity="top|start"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/materialTextView17"
+            app:layout_constraintTop_toTopOf="@+id/materialTextView17" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:background="@color/primary_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/edit_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_topic_name"
+            android:textSize="@dimen/text_medium_size"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="@dimen/holder_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/icon_edit_topic_name"
+            android:layout_marginStart="@dimen/default_margin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_edit_topic_name"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_pin"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:tint="@color/action_icon"
+            android:rotation="45"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/holder_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pin_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/edit_topic"/>
+    </RelativeLayout>
+</layout>

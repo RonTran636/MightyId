@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@drawable/border_incoming_call_notification">
+
+    <TextView
+        android:id="@+id/noti_name"
+        style="@style/TextAppearance.Compat.Notification.Title.Media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/noti_avatar"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/noti_avatar"
+        android:layout_toStartOf="@+id/call_action"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/user_name"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_medium_size" />
+
+    <TextView
+        android:id="@+id/noti_message"
+        style="@style/TextAppearance.Compat.Notification.Line2.Media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noti_name"
+        android:layout_toEndOf="@id/noti_avatar"
+        android:layout_toStartOf="@+id/call_action"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/notification_call_message"
+        android:textSize="@dimen/text_small_size" />
+
+    <ImageView
+        android:id="@+id/noti_avatar"
+        android:layout_width="@dimen/user_avatar_size"
+        android:layout_height="@dimen/user_avatar_size"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:src="@drawable/ic_avatar_default"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/call_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/noti_decline"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="4dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@color/accent_red"
+            android:background="@drawable/button_circular"
+            android:src="@drawable/ic_baseline_call_end"
+            tools:ignore="ContentDescription"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/noti_accept"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/holder_margin"
+            android:layout_marginEnd="@dimen/holder_margin"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/accent_green"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_local_phone"
+            tools:ignore="ContentDescription"
+            app:tint="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

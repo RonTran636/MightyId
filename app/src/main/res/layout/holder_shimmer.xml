@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/holder_suggesting_contact_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="@dimen/holder_margin"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="@dimen/holder_margin"
+    android:padding="4dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/holder_contact_avatar_container"
+        android:layout_width="@dimen/user_avatar_size"
+        android:layout_height="@dimen/user_avatar_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent"
+        app:srcCompat="@color/color_background_grey" />
+
+    <TextView
+        android:id="@+id/holder_contact_name"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_login_button"
+        android:backgroundTint="@color/color_background_grey"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+    <TextView
+        android:id="@+id/holder_contact_workid"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/border_login_button"
+        android:backgroundTint="@color/color_background_grey"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+        app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

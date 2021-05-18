@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">@color/md_grey_800</color>
+    <color name="secondary_color">@color/md_blue_grey_600</color>
+    <color name="button_google">@color/md_grey_800</color>
+    <color name="button_facebook">@color/md_grey_800</color>
+    <color name="button_create_account">@color/md_grey_800</color>
+    <color name="forgot_password">@color/md_grey_400</color>
+    <color name="text_color">@color/white</color>
+    <color name="backgroundColor">#121212</color>
+    <color name="search_bar_background">@color/md_grey_800</color>
+    <color name="primary_color_35_percent">@color/md_grey_700</color>
+    <color name="action_icon">@color/white</color>
+    <color name="bottom_nav_default">@color/white</color>
+    <color name="primary_background">@color/background_material_dark</color>
+    <color name="accept_friend">@color/md_grey_800</color>
+    <color name="decline_friend">@color/md_grey_800</color>
+    <color name="request_friend">@color/md_blue_grey_600</color>
+    <color name="background_blur">#BA424242</color>
+    <color name="chat_user">#5647ea</color>
+    <color name="action_pressed">@color/accent_white</color>
+    <color name="action_unpressed">@color/md_grey_800</color>
+
+</resources>

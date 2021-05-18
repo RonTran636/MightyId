@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="0dp"
+            android:fitsSystemWindows="true"
+            android:layout_height="wrap_content"
+            app:menu="@menu/user_detail_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/back_space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back"
+                tools:ignore="ContentDescription"
+                app:tint="@color/action_icon" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_detail_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar5"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/user_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_medium_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_detail_avatar" />
+
+
+        <LinearLayout
+            android:id="@+id/friend_status_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:background="@drawable/border_outline_button"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_detail_name">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/friend_status_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:adjustViewBounds="true"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_user_icon"
+                android:tint="@color/request_friend" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/friend_status"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="@string/friend_request_received"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/request_friend"
+                android:textSize="@dimen/text_very_small_size" />
+            <LinearLayout
+                android:id="@+id/response_friend_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/action_accept_friend"
+                    android:layout_width="@dimen/holder_margin"
+                    android:layout_height="@dimen/holder_margin"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_circular"
+                    android:backgroundTint="@color/accept_friend"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_baseline_check_24"
+                    app:layout_constraintBottom_toTopOf="@+id/holder_message_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/accent_white" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/action_reject_friend"
+                    android:layout_width="@dimen/holder_margin"
+                    android:layout_height="@dimen/holder_margin"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_circular"
+                    android:backgroundTint="@color/decline_friend"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toTopOf="@+id/holder_message_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/accent_white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/friend_status_layout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_call"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_local_phone"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_video_call"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:src="@drawable/ic_videocall"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_message"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:src="@drawable/ic_message"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_add_friend"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/ic_person_add"
+                app:tint="@color/action_icon"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="@string/call_logs"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginTop="4dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/history_list"
+            app:layout_constraintStart_toStartOf="@+id/history_list"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <ImageView
+                android:id="@+id/empty_list_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_margin="@dimen/holder_margin"
+                android:src="@drawable/pic_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.25"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/empty_list_make_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_list_history_call"
+                android:gravity="center"
+                android:lines="2"
+                android:autoSizeTextType="uniform"
+                android:textColorLink="@color/com_facebook_messenger_blue"
+                android:textColorHighlight="@color/accent_white"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="@dimen/text_small_size"
+                app:layout_constraintBottom_toBottomOf="@+id/empty_list_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/empty_list_image"
+                app:layout_constraintVertical_bias="0.90" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_frame_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/history_list"
+            app:layout_constraintStart_toStartOf="@+id/history_list"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/holder_shimmer" />
+
+                <include layout="@layout/holder_shimmer" />
+
+                <include layout="@layout/holder_shimmer" />
+
+                <include layout="@layout/holder_shimmer" />
+
+                <include layout="@layout/holder_shimmer" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.call.invitation.OutGoingInvitationActivity">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/splash_background"
+            tools:ignore="ContentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/outgoing_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_blur">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/outgoing_caller_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_avatar_default"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/outgoing_caller_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/user_name"
+                android:textSize="@dimen/text_large_size"
+                app:layout_constraintEnd_toEndOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintStart_toStartOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/outgoing_caller_avatar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/outgoing_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_calling"
+                android:layout_marginTop="9dp"
+                android:drawableStart="@drawable/ic_small_ico_workid"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/text_small_size"
+                android:drawablePadding="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintStart_toStartOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/outgoing_caller_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/outgoing_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="invisible"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/speaker_on"
+                android:textSize="@dimen/text_small_size"
+                app:layout_constraintEnd_toEndOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintStart_toStartOf="@+id/outgoing_caller_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/outgoing_message" />
+
+            <ImageView
+                android:id="@+id/outgoing_end"
+                android:layout_width="@dimen/round_button_radius"
+                android:layout_height="@dimen/round_button_radius"
+                android:layout_margin="@dimen/holder_margin"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/accent_red"
+                android:padding="15dp"
+                android:rotation="135.0"
+                android:src="@drawable/ic_baseline_local_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ad_preview"
+                app:layout_constraintVertical_bias="0.5"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/outgoing_speaker"
+                android:layout_width="@dimen/round_button_radius"
+                android:layout_height="@dimen/round_button_radius"
+                android:layout_margin="@dimen/holder_margin"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color"
+                android:padding="15dp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_speakers"
+                app:layout_constraintBottom_toBottomOf="@+id/outgoing_end"
+                app:layout_constraintEnd_toStartOf="@+id/outgoing_end"
+                app:layout_constraintTop_toTopOf="@+id/outgoing_end" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/outgoing_video"
+                android:layout_width="@dimen/round_button_radius"
+                android:layout_height="@dimen/round_button_radius"
+                android:layout_margin="@dimen/holder_margin"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color"
+                android:padding="15dp"
+                android:src="@drawable/ic_videocall"
+                app:layout_constraintBottom_toBottomOf="@+id/outgoing_end"
+                app:layout_constraintStart_toEndOf="@+id/outgoing_end"
+                app:layout_constraintTop_toTopOf="@+id/outgoing_end"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ad_preview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/holder_margin"
+                android:layout_marginEnd="@dimen/holder_margin"
+                android:layout_marginBottom="30dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:visibility="invisible"
+                android:src="@drawable/background_university"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline7"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <LinearLayout
+                android:id="@+id/pending_join_existing_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:background="@drawable/border_login_button"
+                android:backgroundTint="@color/primary_color"
+                app:layout_constraintEnd_toEndOf="@+id/preview_view"
+                app:layout_constraintStart_toStartOf="@+id/preview_view"
+                app:layout_constraintTop_toBottomOf="@+id/outgoing_status">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/waiting_for_response"
+                    android:textColor="@color/accent_white"
+                    android:textSize="@dimen/text_medium_size" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/preview_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/preview_view"
+                    app:layout_constraintTop_toTopOf="@+id/preview_view" />
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+</layout>

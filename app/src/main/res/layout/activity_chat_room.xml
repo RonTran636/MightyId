@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription"
+    tools:context=".activities.main.ui.message.chatRoom.home.ChatRoomActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_room_layout"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/chat_list"
+            app:layout_constraintEnd_toEndOf="@+id/chat_list"
+            app:layout_constraintStart_toStartOf="@+id/chat_list"
+            app:layout_constraintTop_toTopOf="@id/chat_list">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/back_space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/small_margin"
+                app:tint="@color/action_icon"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/holder_message_avatar_container"
+                android:layout_width="@dimen/user_avatar_size"
+                android:layout_height="@dimen/user_avatar_size"
+                android:layout_marginStart="8dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/back_space"
+                app:layout_constraintStart_toEndOf="@+id/back_space"
+                app:layout_constraintTop_toTopOf="@+id/back_space"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/back_space"
+                app:layout_constraintEnd_toStartOf="@+id/holder_action_call"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/holder_message_avatar_container"
+                app:layout_constraintTop_toTopOf="@+id/back_space">
+
+                <TextView
+                    android:id="@+id/topic_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/user_name"
+                    android:textSize="@dimen/text_medium_size" />
+
+                <TextView
+                    android:id="@+id/topic_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/currently_online"
+                    android:textSize="@dimen/text_very_small_size" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_action_call"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:src="@drawable/ic_phone"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toStartOf="@+id/holder_action_video_call"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_action_video_call"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="8dp"
+                android:src="@drawable/ic_videocall"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toStartOf="@+id/holder_more_info"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_more_info"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:background="@drawable/ic_more_vert"
+                android:backgroundTint="@color/action_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/holder_action_video_call"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/holder_action_video_call" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pin_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_outline_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pin_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pin"
+                app:tint="@color/action_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:rotation="-45"/>
+
+            <View
+                android:id="@+id/pin_line1"
+                android:layout_width="1.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginStart="2dp"
+                android:background="@color/primary_color"
+                app:layout_constraintStart_toEndOf="@id/pin_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pin_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_bold"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                android:textSize="@dimen/text_small_size"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/pin_line2"
+                app:layout_constraintStart_toEndOf="@+id/pin_line1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pin_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="@dimen/text_very_small_size"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintEnd_toStartOf="@+id/pin_line2"
+                app:layout_constraintStart_toStartOf="@id/pin_title"
+                app:layout_constraintTop_toBottomOf="@id/pin_title"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:id="@+id/pin_line2"
+                android:layout_width="1.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginStart="2dp"
+                android:background="@color/primary_color"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@id/pin_expand"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pin_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete_outlined"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                app:tint="@color/action_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/typing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin_layout"
+            app:reverseLayout="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/typing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/reply_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/chat_room_divider">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/partner_avatar"
+                android:layout_width="@dimen/user_avatar_size"
+                android:layout_height="@dimen/user_avatar_size"
+                android:src="@drawable/ic_avatar_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                android:background="@drawable/border_chat_partner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/partner_avatar"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"
+                    app:lottie_rawRes="@raw/typing" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/separate_line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin">
+            <View
+                android:id="@+id/reply_line"
+                android:layout_width="1.5dp"
+                android:layout_height="0dp"
+                android:background="@color/primary_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:id="@+id/reply_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:visibility="gone"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@id/reply_line"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/reply_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/reply_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_bold" />
+                <TextView
+                    android:id="@+id/reply_message"
+                    android:layout_width="wrap_content"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/reply_dismiss"
+                android:layout_width="@dimen/holder_margin"
+                android:layout_height="@dimen/holder_margin"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/bottom_nav_default"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_clear_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/primary_color" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/separate_line2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            android:background="@color/accent_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/chat_bar"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/action_assign_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:src="@drawable/ic_todo"
+                app:layout_constraintBottom_toBottomOf="@+id/topic_chat_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/action_icon" />
+
+            <ImageView
+                android:id="@+id/action_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_add_image"
+                app:layout_constraintBottom_toBottomOf="@+id/topic_chat_layout"
+                app:layout_constraintStart_toEndOf="@id/action_assign_task"
+                app:tint="@color/action_icon" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/action_record"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_toEndOf="@id/action_upload_image"-->
+            <!--                android:visibility="gone"-->
+            <!--                android:layout_alignParentBottom="true"-->
+            <!--                android:layout_marginStart="16dp"-->
+            <!--                android:layout_marginBottom="12dp"-->
+            <!--                android:src="@drawable/ic_microphone"-->
+            <!--                app:tint="@color/primary_color" />-->
+
+            <ImageView
+                android:id="@+id/action_minimize_typing_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_minimize_typing_box"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/topic_chat_layout"
+                app:layout_constraintStart_toEndOf="@+id/action_upload_image"
+                app:layout_constraintTop_toTopOf="@+id/topic_chat_layout"
+                app:tint="@color/action_icon" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/topic_chat_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="bottom"
+                app:boxStrokeColor="@color/bottom_nav_icon_color_selector"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/action_send_message"
+                app:layout_constraintStart_toEndOf="@+id/action_minimize_typing_box">
+
+                <com.vanniktech.emoji.EmojiEditText
+                    android:id="@+id/topic_chat_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_add_friend_message"
+                    android:gravity="bottom"
+                    android:hint="@string/type_a_message"
+                    android:maxLines="5"
+                    android:padding="8dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="@dimen/default_margin" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/emoji_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_emoji_emotions"
+                app:layout_constraintBottom_toBottomOf="@+id/topic_chat_layout"
+                app:layout_constraintEnd_toEndOf="@+id/topic_chat_layout"
+                app:tint="@color/action_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/action_send_message"
+                android:layout_width="@dimen/default_action_size"
+                android:layout_height="@dimen/default_action_size"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/button_circular"
+                android:backgroundTint="@color/primary_color_35_percent"
+                android:padding="4dp"
+                android:src="@drawable/ic_send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/action_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/holder_margin"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/typing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/empty_list_avatar_partner"
+                android:layout_width="@dimen/user_avatar_size_large"
+                android:layout_height="@dimen/user_avatar_size_large"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+            <TextView
+                android:id="@+id/empty_list_find_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/message_friend_accepted"
+                android:textColorHighlight="@color/accent_white"
+                android:textColorLink="@color/com_facebook_messenger_blue"
+                android:textSize="@dimen/text_small_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empty_list_avatar_partner"
+                app:layout_constraintVertical_bias="0.204" />
+
+            <TextView
+                android:id="@+id/empty_list_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/start_a_message"
+                android:textColorHighlight="@color/accent_white"
+                android:textColorLink="@color/com_facebook_messenger_blue"
+                android:textSize="@dimen/text_small_size"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empty_list_find_status" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/action_add_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/empty_list_message"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/action_add_friend"
+                android:textColorLink="@color/com_facebook_messenger_blue"
+                android:textSize="@dimen/text_small_size"
+                android:fontFamily="@font/roboto_regular"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

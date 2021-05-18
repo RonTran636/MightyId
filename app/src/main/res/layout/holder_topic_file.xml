@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_suggesting_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="@dimen/user_avatar_size"
+            android:layout_height="@dimen/user_avatar_size"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:background="@drawable/border_outline_button"
+            android:backgroundTint="@color/bottom_nav_default"
+            android:src="@drawable/ic_baseline_source_24"
+            app:tint="@color/primary_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/holder_file_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:singleLine="true"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_small_size"
+            android:textColor="@color/com_facebook_messenger_blue"
+            app:layout_constraintEnd_toStartOf="@+id/holder_action_save"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_file_sender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="true"
+            android:text="@string/holder_id"
+            android:textColor="@color/bottom_nav_default"
+            android:textSize="@dimen/text_very_small_size"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="@+id/holder_file_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toBottomOf="@id/holder_file_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_save"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="6dp"
+            android:src="@drawable/ic_save"
+            app:tint="@color/action_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

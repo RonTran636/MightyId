@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/assignee_avatar"
+        android:layout_width="@dimen/default_action_size"
+        android:layout_height="@dimen/default_action_size"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/assignee_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/text_small_size"
+        android:textColor="@color/text_color"/>
+</LinearLayout>

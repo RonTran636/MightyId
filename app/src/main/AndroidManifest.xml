@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mightyId">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_DEVICE_CONFIG"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:fullBackupContent="false"
+        android:hasFragileUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WorkID"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="q">
+        <activity android:name=".activities.main.ui.message.chatRoom.options.storedMedia.StoredMediaActivity" />
+        <activity
+            android:name=".activities.main.ui.message.chatRoom.captureImage.CameraActivity"
+            android:label="@string/title_activity_camera"
+            android:theme="@style/Theme.WorkID.NoActionBar" />
+        <activity
+            android:name=".activities.main.ui.message.chatRoom.options.MenuOptionActivity"
+            android:theme="@style/Theme.WorkID.SlidrTheme" />
+        <activity
+            android:name=".activities.main.ui.message.chatRoom.home.ChatRoomActivity"
+            android:label="@string/title_activity_chat_room"
+            android:theme="@style/Theme.WorkID.NoActionBar" />
+        <activity
+            android:name=".activities.userDetails.UserDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.call.MeetingActivity" />
+        <activity
+            android:name=".activities.login.LoginActivity"
+            android:theme="@style/Theme.WorkID.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="workid.page.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.splash.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.WorkID.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.main.MainActivity"
+            android:label="@string/title_activity_home"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.onboarding.OnBoardingActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.base.BaseActivity" />
+        <activity
+            android:name=".activities.call.invitation.IncomingInvitationActivity"
+            android:directBootAware="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:theme="@style/Theme.WorkID.Fullscreen"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.call.invitation.OutGoingInvitationActivity"
+            android:directBootAware="true"
+            android:theme="@style/Theme.WorkID.Fullscreen"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- Service Field -->
+        <service
+            android:name=".services.FirebaseService"
+            android:directBootAware="true"
+            android:exported="false"
+            android:enabled="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <receiver
+            android:name=".broadcast.ResponseReceiver"
+            android:directBootAware="true"
+            android:exported="false"
+            android:priority="999">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.NotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="Constant.REMOTE_MSG_ACCEPTED" />
+                <action android:name="Constant.REMOTE_MSG_REJECTED" />
+            </intent-filter>
+        </receiver> <!-- Facebook Meta data -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="fontProviderRequests"
+            android:value="Noto Color Emoji Compat" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

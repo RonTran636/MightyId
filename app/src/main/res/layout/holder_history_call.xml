@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin">
+
+        <RelativeLayout
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/holder_contact_avatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_avatar_default"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+            <!--Rotation 2 angle: 135 / 225-->
+            <ImageView
+                android:id="@+id/holder_contact_status"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/button_circular"
+                android:padding="2dp"
+                android:src="@drawable/ic_call_missed"
+                app:tint="@color/accent_white"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/holder_contact_multi_select"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/ic_avatar_checked"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/holder_contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:singleLine="true"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_medium_size"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/holder_action_call"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_time_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="true"
+            android:text="@string/history_call_time"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="@+id/holder_contact_name"
+            app:layout_constraintStart_toStartOf="@+id/holder_contact_name"
+            app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/action_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_action_video_call"
+            app:layout_constraintEnd_toStartOf="@+id/holder_action_video_call"
+            app:layout_constraintTop_toTopOf="@+id/holder_action_video_call"
+            app:tint="@color/action_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_video_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/action_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_videocall"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_action_message"
+            app:layout_constraintEnd_toStartOf="@id/holder_action_message"
+            app:layout_constraintTop_toTopOf="@+id/holder_action_message"
+            app:tint="@color/action_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_message"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/action_icon" />
+
+        <View
+            android:id="@+id/separate_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            android:background="@color/separate_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

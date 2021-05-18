@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_suggesting_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="@dimen/user_avatar_size"
+            android:layout_height="@dimen/user_avatar_size"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+        <TextView
+            android:id="@+id/holder_todo_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:fontFamily="@font/rubik_bold"
+            android:textStyle="italic"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintEnd_toStartOf="@+id/todo_status_text"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_todo_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="true"
+            android:text="@string/holder_id"
+            android:textColor="@color/bottom_nav_default"
+            android:textSize="@dimen/text_small_size"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="@+id/todo_status_icon"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toBottomOf="@id/holder_todo_title" />
+
+        <TextView
+            android:id="@+id/holder_todo_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:fontFamily="@font/roboto_light"
+            android:singleLine="true"
+            android:text="@string/todo_start"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_very_small_size"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toBottomOf="@+id/holder_todo_detail" />
+
+        <TextView
+            android:id="@+id/holder_todo_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:singleLine="true"
+            android:text="@string/todo_end"
+            android:textSize="@dimen/text_very_small_size"
+            app:layout_constraintEnd_toEndOf="@+id/holder_todo_detail"
+            app:layout_constraintTop_toTopOf="@+id/holder_todo_start" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/todo_status_icon"
+            android:layout_width="@dimen/todo_status"
+            android:layout_height="@dimen/todo_status"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/green"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_todo_title"
+            app:layout_constraintEnd_toStartOf="@id/holder_action_option"
+            app:layout_constraintTop_toTopOf="@+id/holder_todo_title"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todo_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Pending"
+            android:fontFamily="@font/rubik_italic"
+            android:textSize="@dimen/text_small_size"
+            android:layout_marginEnd="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_todo_title"
+            app:layout_constraintEnd_toStartOf="@+id/todo_status_icon"
+            app:layout_constraintTop_toTopOf="@+id/holder_todo_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_option"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:padding="6dp"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/action_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

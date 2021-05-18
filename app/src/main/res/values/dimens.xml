@@ -1,0 +1,43 @@
+<resources>
+    <!-- Margins-->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="holder_margin">20dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_large_size">24sp</dimen>
+    <dimen name="text_medium_size">16sp</dimen>
+    <dimen name="text_small_size">14sp</dimen>
+    <dimen name="text_button_size">16sp</dimen>
+    <!-- OnBoard. -->
+    <dimen name="pager_dot_size">8dp</dimen>
+    <dimen name="pager_height">16dp</dimen>
+    <dimen name="default_action_size">32dp</dimen>
+    <dimen name="app_bar_height">350dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!--User-Detail-->
+    <dimen name="user_avatar_size">40dp</dimen>
+    <dimen name="user_name_large">36sp</dimen>
+    <dimen name="user_name_medium">24sp</dimen>
+    <dimen name="user_last_seen_large">24sp</dimen>
+    <dimen name="user_last_seen_medium">16sp</dimen>
+    <dimen name="user_info_container_medium">150dp</dimen>
+    <dimen name="user_info_container_large">300dp</dimen>
+    <dimen name="button_max_text">18dp</dimen>
+    <dimen name="button_default_height">48dp</dimen>
+    <dimen name="holder_name">16sp</dimen>
+    <dimen name="holder_sub_text">14sp</dimen>
+    <dimen name="round_button_radius">64dp</dimen>
+    <dimen name="icon_dimens">24dp</dimen>
+    <dimen name="chat_room_divider">2dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="action_margin">12dp</dimen>
+    <dimen name="user_avatar_size_large">80dp</dimen>
+    <dimen name="shutter_large">92dp</dimen>
+    <dimen name="shutter_button_margin">80dp</dimen>
+    <dimen name="round_button_medium">64dp</dimen>
+    <dimen name="text_very_small_size">12sp</dimen>
+    <dimen name="todo_status">18dp</dimen>
+</resources>

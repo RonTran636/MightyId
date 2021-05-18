@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginHomeFragment">
+
+    <fragment
+        android:id="@+id/loginHomeFragment"
+        android:name="com.mightyId.activities.login.home.LoginHomeFragment"
+        android:label="fragment_login_home"
+        tools:layout="@layout/fragment_login_home" >
+        <action
+            android:id="@+id/action_loginHomeFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_loginHomeFragment_to_fragmentSignUp"
+            app:destination="@id/fragmentSignUp"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <dialog
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.mightyId.activities.login.forgotPassword.ForgotPasswordStep1Fragment"
+        android:label="fragment_forgot_password_step_1"
+        tools:layout="@layout/dialog_forgot_password_step1" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_forgotPasswordStep2Fragment"
+            app:destination="@id/forgotPasswordStep2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/forgotPasswordStep2Fragment"
+        android:name="com.mightyId.activities.login.forgotPassword.ForgotPasswordStep2Fragment"
+        android:label="ForgotPasswordStep2Fragment"
+        tools:layout="@layout/fragment_forgot_password_step2">
+        <action
+            android:id="@+id/action_forgotPasswordStep2Fragment_to_forgotPasswordStep3Fragment"
+            app:destination="@id/forgotPasswordStep3Fragment" />
+        <action
+            android:id="@+id/action_forgotPasswordStep2Fragment_to_signupWelcome"
+            app:destination="@id/signupWelcome"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordStep3Fragment"
+        android:name="com.mightyId.activities.login.forgotPassword.ForgotPasswordStep3Fragment"
+        android:label="ForgotPasswordStep3Fragment"
+        tools:layout="@layout/fragment_forgot_password_step3">
+        <action
+            android:id="@+id/action_forgotPasswordStep3Fragment_to_loginHomeFragment"
+            app:destination="@id/loginHomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupWelcome"
+        android:name="com.mightyId.activities.login.signup.SignupWelcome"
+        android:label="fragment_signup_welcome"
+        tools:layout="@layout/fragment_signup_welcome" >
+        <action
+            android:id="@+id/action_signupWelcome_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <dialog
+        android:id="@+id/fragmentSignUp"
+        android:name="com.mightyId.activities.login.signup.FragmentSignUp"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_fragmentSignUp_to_forgotPasswordStep2Fragment"
+            app:destination="@id/forgotPasswordStep2Fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentSignUp_to_fragmentWebView"
+            app:destination="@id/fragmentWebView"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </dialog>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.mightyId.activities.main.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main" />
+    <dialog
+        android:id="@+id/fragmentWebView"
+        android:name="com.mightyId.activities.login.signup.FragmentWebView"
+        android:label="FragmentWebView"
+        tools:layout="@layout/fragment_web_view">
+        <action
+            android:id="@+id/action_fragmentWebView_to_loginHomeFragment"
+            app:destination="@id/loginHomeFragment" />
+    </dialog>
+
+</navigation>

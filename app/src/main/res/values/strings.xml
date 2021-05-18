@@ -1,0 +1,377 @@
+<resources>
+    <string name="app_name">Mighty ID</string>
+    <string name="facebook_app_id">1292088657825384</string>
+    <string name="fb_login_protocol_scheme">fb1292088657825384</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_message">Message</string>
+    <string name="title_contact">Contact</string>
+    <string name="title_setting">Setting</string>
+    <string name="btn_skip">Login</string>
+    <string name="user_email">Email</string>
+    <string name="user_password">Password</string>
+    <string name="message_welcome">Welcome to Work ID</string>
+    <string name="action_login">Login</string>
+    <string name="action_create_account">Create Account</string>
+    <string name="sign_in_with">Or sign up with your social account</string>
+    <string name="action_sign_in">Don\'t have an account? Sign up</string>
+    <string name="incoming_message">Incoming %1$s request from %2$s …</string>
+    <string name="outgoing_message">Calling to %1$s…</string>
+    <string name="first_slide_title">Free calls and conferences</string>
+    <string name="first_slide_header">
+We are offering free high-quality services for individual, mini call, and conference call with less than 5 participants. However, if you need bigger room, it will cost you less than a dollar.
+    </string>
+    <string name="second_slide_title">New level of safety and quality</string>
+    <string name="third_slide_title">Not just an app, it is a lifestyle</string>
+    <string name="second_slide_header">
+We take pride in providing high level of quality and safety to our clients. Our team is dedicated to protecting your privacy and data as you navigate and communicate through our system.
+    </string>
+    <string name="third_slide_header">
+This is not just another calling application or conference platform. What we offer is an innovative way to make friends, expand your social interactions, work efficiently, and do better business.    </string>
+    <string name="action_calling">Calling…</string>
+    <string name="message_call_end">Call Ended.</string>
+    <string name="outgoing_group_call">Establishing %1$s meeting …</string>
+    <string name="notification_call_message">Incoming WorkID %1$s Call…</string>
+    <string name="title_activity_user_detail2">ScrollingActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="christian_charles_n_philip_bale">Christian Bale</string>
+    <string name="christian_bale">Christian Bale</string>
+    <string name="user_name">Tran Quang Minh</string>
+    <string name="user_last_seen">last seen recently</string>
+    <string name="invalid_user_email">Invalid email format</string>
+    <string name="invalid_password">Password is not strong enough</string>
+    <string name="sign_in_with_email_and_password_failed">Password invalid or username are not exist</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="message_term_and_policy">By clicking Create my WorkID, you agree to our Terms and that you have read our Privacy Policy, including our Cookie Use.</string>
+    <string name="create_my_work_id">Create my Work ID</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="display_name">Display name</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="invalid_email">Invalid email, please try again</string>
+    <string name="email_existed">Email is existed,please use another email</string>
+    <string name="password_rules">A Password must:</string>
+    <string name="is_6_characters">⚬ Have at least 6 characters.</string>
+    <string name="is_1_lowercase_letter">⚬ Have at least lowercase  1 letter (a,b,c …).</string>
+    <string name="is_1_capital_letter">⚬ Have at least uppercase  1 letter (A,B,C …).</string>
+    <string name="is_1_number">⚬ Have at least 1 number (1,2,3).</string>
+    <string name="is_1_special_char">⚬ Have at least 1 special character (!,@,# …).</string>
+    <string name="password_not_match">Confirm password doesn\'t match</string>
+    <string name="search_by_work_id">Enter an ID or phone number to search and find friends.</string>
+    <string name="welcome_message">Welcome, %1$s</string>
+    <string name="search_bar_hint">Enter Work ID or email address</string>
+    <string name="people_you_may_know">People you may know</string>
+    <string name="work_id">WorkID</string>
+    <string name="holder_id">ID: %1$s</string>
+    <string name="my_friends">Friends</string>
+    <string name="my_contact">My Contact</string>
+    <string name="search_result">Result</string>
+    <string name="send_message">Send message…</string>
+    <string name="action_add_friend">Add Friend</string>
+    <string name="send_instruction">Send Verification Email</string>
+    <string name="create_an_new_password">Create An New Password</string>
+    <string name="reset_password">Reset Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="list_of_search_results">List of search results</string>
+    <string name="history_call_time">Yesterday</string>
+    <string name="explore">Explore</string>
+    <string name="rejected_call">Rejected Call</string>
+    <string name="group_calling">Establishing group meeting.</string>
+    <string name="call_rejected">Call rejected.</string>
+    <string name="user_not_available">User are not available at the moment</string>
+    <string name="no_result_found">No result found</string>
+    <string name="title_history">History</string>
+    <string name="action_share_contact">Share contact</string>
+    <string name="action_video_call">Video Call</string>
+    <string name="action_block_contact">Block contact</string>
+    <string name="action_edit_contact">Edit contact</string>
+    <string name="dialog_join_the_room_content">By continue you will ask to join the %1$s \'s meeting. Do you want to continue?</string>
+    <string name="action_accept">Accept</string>
+    <string name="dialog_join_the_room_title">%1$s is currently having another meeting</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="search">Search</string>
+    <string name="message_result_empty">No result match your condition. Please try again.</string>
+    <string name="notification_add_friend_message">Sending you a friend request</string>
+    <string name="message_friend_request">New friend request</string>
+    <string name="title_search">SearchFragment</string>
+    <string name="title_add_friend_dialog">AddFriendPopup</string>
+    <string name="new_friend_request">New friend request</string>
+    <string name="view_all">View all</string>
+    <string name="missed_call">Work ID call missed</string>
+    <string name="speaker_on">You are turn on speaker</string>
+    <string name="message_private_meeting">%1$s is in a private meeting</string>
+    <string name="call_history">Call History</string>
+    <string name="my_messages">My Messages</string>
+    <string name="message_time">Nov 21</string>
+    <string name="message_create_account_failed">Something went wrong, please try again</string>
+    <string name="empty_field">%1$s can not be empty</string>
+    <string name="message_invalid_password">Invalid email or password</string>
+    <string name="check_your_email">Check your email</string>
+    <string name="forgot_password_step_2_message">We have send your an email recover in your mailbox</string>
+    <string name="action_open_mail_app">Open Mail App</string>
+    <string name="skip_i_ll_confirm_it_later">Skip, I\'ll confirm it later</string>
+    <string name="chooser_title">Open With</string>
+    <string name="message_create_account_successfully">Congratulations! You have successfully created an account.</string>
+    <string name="start_experience">Start Experience</string>
+    <string name="action_change_email">Did not receive the mail? Check your spam filter, or \ntry another email address</string>
+    <string name="processing">Processing</string>
+    <string name="waiting_for_response">Waiting for response</string>
+    <string name="message_add_friend">Hi, I\'m %s, let\'s be friend !</string>
+    <string name="audio">/$1%s</string>
+    <string name="call_duration">%dhrs %dmins %dsecs</string>
+    <string name="friend_request_sent">Friend request sent, waiting for response</string>
+    <string name="friend_request_received">%s sent a friend request.</string>
+    <string name="empty_list_find_friend">Looks like you don\'t have any friend. Why don\'t we \nfind some friend?</string>
+    <string name="setting">Setting</string>
+    <string name="account_and_security">Account and Security</string>
+    <string name="privacy">Privacy</string>
+    <string name="theme">Theme</string>
+    <string name="notification">Notifications</string>
+    <string name="language_and_font">Language and Font</string>
+    <string name="title_call">Call</string>
+    <string name="about_us">About us</string>
+    <string name="request_join_call">%s would like to join the meeting.</string>
+    <string name="incoming_request">Incoming request</string>
+    <string name="action_decline">Decline</string>
+    <string name="action_approve">Approve</string>
+    <string name="message_accept_join">Request are accepted, connecting…</string>
+    <string name="message_decline_join">Request are declined.</string>
+    <string name="request_timed_out">Request timed out</string>
+    <string name="cancel_join_request">\"Cancelling join meeting request… \"</string>
+    <string name="call_logs">Call logs</string>
+    <string name="empty_list_history_call">It\'s empty here. Why don\'t we \nmake a call?</string>
+    <string name="email_not_registered">Email is not registered</string>
+    <string name="private_message">Private Message</string>
+    <string name="shared_topic">Shared Topics</string>
+    <string name="sad">This is dashboard Fragment</string>
+    <string name="new_topic">Create new Topic</string>
+    <string name="add_participant">Add Participants</string>
+    <string name="title_topic">Topic: </string>
+    <string name="action_create">Create</string>
+    <string name="topic_name">Topic Name</string>
+    <string name="message_topic_name_empty">Topic name can\'t be empty</string>
+    <string name="message_empty_topic">Topic must have at least 1 person</string>
+    <string name="type_a_message">Type a message …</string>
+    <string name="shitty_text">My Name is Joyce. It\'s was nice to meet you. How many times are you go to supermarket per week?</string>
+    <string name="reply_label">Type to reply…</string>
+    <string name="reply">Reply</string>
+    <string name="title_activity_chat_room">ChatRoomActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="topic_empty_message">Say something to this topic</string>
+    <string name="currently_online">currently online</string>
+    <string name="title_video_call">Video Call</string>
+    <string name="show_more">Show_more</string>
+    <string name="number_participant">%d participants</string>
+    <string name="add_user">Add user</string>
+    <string name="remove_user">Remove user</string>
+    <string name="rename_topic">Rename topic</string>
+    <string name="change_topic_photo">Change topic photo</string>
+    <string name="action_add">ADD</string>
+    <string name="see_topic_members">See topic members</string>
+    <string name="topic_member">Topic members</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="log_out">Log out</string>
+    <string name="option">Options</string>
+    <string name="search_in_conversation">Search in conversation</string>
+    <string name="files">Files</string>
+    <string name="list_participants">List participants</string>
+    <string name="pin_conversation">Pin conversation</string>
+    <string name="delete_conversation">Delete topic history</string>
+    <string name="leave_topic">Leave Topic</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="term_privacy_reminder">Please accept our Term and Privacy</string>
+    <string name="add_contact">Add contact</string>
+    <string name="clear_history">Clear history</string>
+    <string name="add_nickname">Add nickname</string>
+    <string name="edit_topic_name">Edit topic name</string>
+    <string name="action_save">Save</string>
+    <string name="invalid_topic_name">Invalid topic name</string>
+    <string name="demo_message_time">2:10 PM</string>
+    <string name="message_default">Now you can start talking to each other</string>
+    <string name="message_sent">Message sent successfully</string>
+    <string name="start_a_message">Say hello to %s</string>
+    <string name="message_friend_accepted">You has just become friend with %s</string>
+    <string name="message_not_friend">You and %s are not friend</string>
+    <string name="message_stranger">Be careful when chat with strangers.</string>
+    <string name="message_friend_accepted_notification">%s accepted your friend request.</string>
+    <string name="requested">Requested</string>
+    <string name="logging_out">Logging out</string>
+    <string name="view_pin_message">View pinned messages</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="capture_button_alt">Gallery</string>
+    <string name="switch_camera_button_alt">Switch camera</string>
+    <string name="media">Media</string>
+    <string name="links">Links</string>
+    <string name="library">Library</string>
+    <string name="copy">Copy</string>
+    <string name="forward">Forward</string>
+    <string name="action_delete">Delete</string>
+    <string name="message_deleted">Message deleted</string>
+    <string name="IOException">Please check your internet connection and try again.</string>
+    <string name="UnknownException">Something went wrong. Please try again later.</string>
+    <string name="backspace">backspace</string>
+    <string name="in_develop">Functionality currently not available</string>
+    <string name="emojis_label">Emoji</string>
+    <string name="stickers_label">Stickers</string>
+    <string name="not_available">Functionality currently not available</string>
+    <string name="not_available_subtitle">Grab a beverage and check back later!</string>
+    <string name="emoji_selector_desc">Show Emoji selector</string>
+    <string name="textfield_desc">Text Input</string>
+    <string name="edit">Edit</string>
+    <string name="pin">Pin</string>
+    <string name="message_copied">Message Copied</string>
+    <string name="reply_picture">[Picture]</string>
+    <string name="list_message">Recent messages</string>
+    <string name="forward_from">Forward from %s</string>
+    <string name="action_send">Send</string>
+    <string name="start_a_topic">It\'s empty here. Let\'s create a topic now!!</string>
+    <string name="new_pin_message">%s has pin a message</string>
+    <string name="pin_topic">Pin topic</string>
+    <string name="later">Later</string>
+    <string name="meeting_in_progress">Topic meeting is in progress…</string>
+    <string name="message_unread">(%d)</string>
+    <string name="to_do_list">To-do lists</string>
+    <string name="action_filter">Filter</string>
+    <string name="todo_start">Start: %s</string>
+    <string name="todo_end">End: %s</string>
+    <string name="create_task">Create a new task</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="assign_to">Assigned to</string>
+    <string name="enter_task_name">Enter task name. Ex: Meeting at 5PM</string>
+    <string name="describe_task">Enter your task content</string>
+    <string name="deadline">Deadline: </string>
+    <string name="deadline_time">%d:%d %d/%d/%d</string>
+    <string name="assign">Assign</string>
+    <string name="new_message">New message</string>
+    <string name="number_unread_message">(%d)</string>
+    <string name="deadline_content">Set task\'s deadline</string>
+    <string name="data_downloading">Data downloading…</string>
+    <string name="switch_receive_call">Only my friends can call me</string>
+    <string name="stored_media_empty">There is no %s has been saved.</string>
+    <string name="no_friend">You currently don\'t have any friend. Search for more participants</string>>
+    <string name="message_friend_accepted_confirmation">You and %s are now become friend.</string>
+    <string name="create_group_with">Create group with %s</string>
+    <string name="message_pinned">Messages pinned</string>
+    <string name="assignee">Assignee: </string>
+    <string name="field_not_null">Field cannot be empty</string>
+    <string name="new_todo">%s create new todo: %s</string>
+    <string name="action_unfriend_contact">Unfriend</string>
+    <string name="attach_file">Attach file: </string>
+    <string name="search_for_participant">Find more participants</string>
+    <string name="call_accept_else_where">Call are accepted on another device.</string>
+    <string name="status_confirm">Confirm</string>
+    <string name="status_pending">Pending</string>
+    <string name="status_reject">Reject</string>
+    <string name="status_fail">Fail</string>
+    <string name="status_complete">Complete</string>
+    <string name="update_status">Update status</string>
+    <string name="todo_status_permission">Only assigner/assignee of this task can change its status.</string>
+    <string name="todo_status_title">Permission denied</string>
+    <string name="receive_message_from_strangers">Only my friend can send me a message</string>
+    <string name="allow_strangers_add_your_to_topic">Only my friends can add me to a group</string>
+    <string name="connection_lost">No internet connection</string>
+    <string name="immersive_cling_positive">Got it</string>
+    <string name="connection_lost_message">Something wrong with internet connection. Please try again later.</string>
+    <string name="your_new_password_must_be_defferent_from_previous_used_passwords">Your new password must be defferent from previous used passwords.</string>
+</resources>

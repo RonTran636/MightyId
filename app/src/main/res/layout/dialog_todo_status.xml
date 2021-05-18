@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/small_margin"
+        android:paddingEnd="@dimen/small_margin">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/todo_update_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="@dimen/text_medium_size"
+            android:text="@string/update_status"/>
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:orientation="vertical"
+            android:layout_below="@+id/todo_update_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/status_pending"
+                android:text="@string/status_pending"
+                android:buttonTint="@color/primary_color"
+                android:paddingStart="@dimen/small_margin"
+                android:paddingEnd="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/status_confirm"
+                android:text="@string/status_confirm"
+                android:paddingStart="@dimen/small_margin"
+                android:buttonTint="@color/primary_color"
+                android:paddingEnd="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/status_reject"
+                android:text="@string/status_reject"
+                android:paddingStart="@dimen/small_margin"
+                android:buttonTint="@color/primary_color"
+                android:paddingEnd="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/status_fail"
+                android:text="@string/status_fail"
+                android:paddingStart="@dimen/small_margin"
+                android:buttonTint="@color/primary_color"
+                android:paddingEnd="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/status_complete"
+                android:text="@string/status_complete"
+                android:paddingStart="@dimen/small_margin"
+                android:buttonTint="@color/primary_color"
+                android:paddingEnd="@dimen/small_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</layout>

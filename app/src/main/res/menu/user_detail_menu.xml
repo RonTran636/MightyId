@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.ScrollingActivity">
+    <item
+        android:id="@+id/menu_show_more"
+        android:orderInCategory="70"
+        android:title="@string/show_more"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_more_vert">
+        <menu>
+            <item
+                android:id="@+id/menu_share_contact"
+                android:orderInCategory="100"
+                android:title="@string/action_share_contact"
+                android:icon="@drawable/ic_share"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_add_nickname"
+                android:orderInCategory="100"
+                android:title="@string/add_nickname"
+                android:icon="@drawable/ic_profile"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_edit_contact"
+                android:orderInCategory="100"
+                android:title="@string/action_edit_contact"
+                android:icon="@drawable/ic_edit"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_block_user"
+                android:orderInCategory="100"
+                android:icon="@drawable/ic_block_line"
+                android:title="@string/action_block_contact"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_delete_history"
+                android:orderInCategory="100"
+                android:icon="@drawable/ic_delete_outlined"
+                android:title="@string/clear_history"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_delete_contact"
+                android:orderInCategory="100"
+                android:title="@string/action_unfriend_contact"
+                android:icon="@drawable/ic_person_remove"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

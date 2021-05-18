@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/holder_avatar_container"
+        android:layout_width="@dimen/user_avatar_size"
+        android:layout_height="@dimen/user_avatar_size"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_avatar_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/holder_cancel"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/button_circular"
+        android:backgroundTint="@color/accent_white"
+        android:scaleType="fitCenter"
+        android:padding="1dp"
+        android:src="@drawable/ic_baseline_clear_24"
+        app:layout_constraintEnd_toEndOf="@+id/holder_avatar_container"
+        app:layout_constraintTop_toTopOf="@+id/holder_avatar_container"
+        app:tint="@color/accent_black" />
+
+    <TextView
+        android:id="@+id/holder_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:layout_marginTop="2dp"
+        android:text="@string/user_name"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/holder_avatar_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

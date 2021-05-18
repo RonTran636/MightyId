@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_suggesting_contact_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/holder_contact_avatar_container"
+            android:layout_width="@dimen/user_avatar_size"
+            android:layout_height="@dimen/user_avatar_size"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:src="@drawable/ic_avatar_default"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separate_line"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.WorkId.CornerSize50Percent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_contact_status"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:padding="2dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_avatar_checked"
+            app:layout_constraintEnd_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_medium_size"
+            android:singleLine="true"
+            android:layout_marginEnd="@dimen/small_margin"
+            app:layout_constraintEnd_toStartOf="@+id/holder_action_call"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container" />
+
+        <TextView
+            android:id="@+id/holder_contact_workid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/holder_id"
+            android:textSize="@dimen/text_small_size"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="@+id/holder_contact_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintTop_toBottomOf="@id/holder_contact_name" />
+
+         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/action_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_action_video_call"
+            app:layout_constraintEnd_toStartOf="@+id/holder_action_video_call"
+            app:layout_constraintTop_toTopOf="@+id/holder_action_video_call"
+            app:tint="@color/action_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_video_call"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/action_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_videocall"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_action_message"
+            app:layout_constraintEnd_toStartOf="@id/holder_action_message"
+            app:layout_constraintTop_toTopOf="@+id/holder_action_message"
+            app:tint="@color/action_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_action_message"
+            android:layout_width="@dimen/default_action_size"
+            android:layout_height="@dimen/default_action_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:background="@drawable/button_circular"
+            android:backgroundTint="@color/primary_color_35_percent"
+            android:padding="8dp"
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_contact_avatar_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holder_contact_avatar_container"
+            app:tint="@color/action_icon" />
+
+        <View
+            android:id="@+id/separate_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/separate_line"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

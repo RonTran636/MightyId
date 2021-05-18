@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.main.ui.message.chatRoom.messageOption.DialogMessageOption">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/primary_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="280dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_login_button"
+                android:backgroundTint="@color/bottom_nav_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:layout_weight="4"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                <TextView
+                    android:id="@+id/action_reply"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/reply"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_baseline_reply" />
+
+                <TextView
+                    android:id="@+id/action_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/action_save"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_save" />
+
+                <TextView
+                    android:id="@+id/action_edit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/edit"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_baseline_edit" />
+
+                <TextView
+                    android:id="@+id/action_copy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/copy"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_baseline_file_copy_24" />
+
+                <TextView
+                    android:id="@+id/action_forward"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/forward"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_baseline_forward" />
+
+                <TextView
+                    android:id="@+id/action_pin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/pin"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_pin" />
+
+                <TextView
+                    android:id="@+id/action_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/action_delete"
+                    android:textColor="@color/bottom_nav_default"
+                    android:textSize="@dimen/text_medium_size"
+                    app:drawableTint="@color/bottom_nav_default"
+                    app:drawableTopCompat="@drawable/ic_delete_filled" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>
